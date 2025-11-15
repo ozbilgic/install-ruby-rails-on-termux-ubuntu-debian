@@ -67,6 +67,7 @@ The script installs the following packages:
 - **libssl-dev** - SSL/TLS development files
 - **zlib1g-dev** - Compression library
 - **libgmp-dev** - Arithmetic library
+- **libyaml-dev** - Yaml library
 - **tzdata** - Implementation of standard local time for Termux
 - **bundler** - Ruby dependency manager
 - **rails** - Web application framework (automatic in one-command mode, optional in manual mode)

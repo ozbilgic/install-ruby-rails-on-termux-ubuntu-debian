@@ -67,6 +67,7 @@ Script aşağıdaki paketleri kurar:
 - **libssl-dev** - SSL/TLS geliştirme dosyaları
 - **zlib1g-dev** - Sıkıştırma kütüphanesi
 - **libgmp-dev** - Aritmetik kütüphane
+- **libyaml-dev** - Yaml kütüphanesi
 - **tzdata** - Termux için standart yerel saat uygulaması
 - **bundler** - Ruby bağımlılık yöneticisi
 - **rails** - Web uygulama framework'ü (tek komutla modda otomatik, manuel modda isteğe bağlı)

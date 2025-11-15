@@ -74,7 +74,7 @@ fi
 
 # 2. Install Ruby and dependencies
 info "Installing Ruby and development tools..."
-if ! $SUDO_CMD apt install -y ruby-full build-essential libsqlite3-dev nodejs git curl gnupg libssl-dev zlib1g-dev libgmp-dev tzdata; then
+if ! $SUDO_CMD apt install -y ruby-full build-essential libsqlite3-dev nodejs git curl gnupg libssl-dev zlib1g-dev libgmp-dev libyaml-dev tzdata; then
     warn "Some dependencies may not have installed correctly"
 fi
 
