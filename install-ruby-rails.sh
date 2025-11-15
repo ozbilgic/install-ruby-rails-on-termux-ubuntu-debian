@@ -29,24 +29,27 @@ error() {
 # Function to detect if sudo is available and needed
 check_sudo() {
     if command -v sudo &> /dev/null && [ "$EUID" -ne 0 ]; then
-        echo "[INFO] sudo detected - using sudo for package management"
+        info "sudo detected - using sudo for package management"
         SUDO_CMD="sudo"
     else
-        echo "[INFO] Running without sudo (root or Termux environment)"
+        info "Running without sudo (root or Termux environment)"
         SUDO_CMD=""
     fi
 }
 
+# Check sudo availability before starting
+check_sudo
+
 # 1. Updating package
 info "Updating package lists..."
 if ! $SUDO_CMD apt update; then
-    echo "[WARN] apt update failed, continuing anyway..."
+    warn "apt update failed, continuing anyway..."
 fi
 
 # 2. Install Ruby and dependencies
 info "Installing Ruby and development tools..."
 if ! $SUDO_CMD apt install -y ruby-full build-essential libsqlite3-dev nodejs git curl gnupg libssl-dev zlib1g-dev libgmp-dev tzdata; then
-    echo "[WARN] Some dependencies may not have installed correctly"
+    warn "Some dependencies may not have installed correctly"
 fi
 
 # 3. Gem settings
