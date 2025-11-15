@@ -24,7 +24,6 @@ A fast and simple installation script for Ruby and Rails on Termux/Ubuntu enviro
 ## Quick Installation (One Command)
 
 Run this single command to download and execute the installation script directly:
-**Note:** When using one-command installation, Rails will be installed automatically. If you want to choose whether to install Rails, use the manual installation method below
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/ozbilgic/install-ruby-rails-on-termux-ubuntu-debian/main/install-ruby-rails.sh)
@@ -66,10 +65,8 @@ The script installs the following packages:
 - **curl** - Data transfer tool
 - **gnupg** - Encryption tools
 - **libssl-dev** - SSL/TLS development files
-- **libreadline-dev** - Readline library
 - **zlib1g-dev** - Compression library
 - **libgmp-dev** - Arithmetic library
-- **libyaml-dev** - YAML parser library
 - **tzdata** - Implementation of standard local time for Termux
 - **bundler** - Ruby dependency manager
 - **rails** - Web application framework (automatic in one-command mode, optional in manual mode)

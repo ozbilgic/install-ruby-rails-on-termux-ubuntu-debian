@@ -24,7 +24,6 @@ Termux/Ubuntu ortamı ve Linux/Debian tabanlı sistemler için APT paket yöneti
 ## Hızlı Kurulum (Tek Komut)
 
 Kurulum scriptini doğrudan indirip çalıştırmak için bu tek komutu çalıştırın:
-**Not:** Tek komutla kurulum kullanıldığında, Rails otomatik olarak kurulacaktır. Rails kurulumunu seçmek isterseniz, aşağıdaki manuel kurulum yöntemini kullanın
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/ozbilgic/install-ruby-rails-on-termux-ubuntu-debian/main/install-ruby-rails.sh)
@@ -66,10 +65,8 @@ Script aşağıdaki paketleri kurar:
 - **curl** - Veri transfer aracı
 - **gnupg** - Şifreleme araçları
 - **libssl-dev** - SSL/TLS geliştirme dosyaları
-- **libreadline-dev** - Readline kütüphanesi
 - **zlib1g-dev** - Sıkıştırma kütüphanesi
 - **libgmp-dev** - Aritmetik kütüphane
-- **libyaml-dev** - YAML ayrıştırıcı kütüphane
 - **tzdata** - Termux için standart yerel saat uygulaması
 - **bundler** - Ruby bağımlılık yöneticisi
 - **rails** - Web uygulama framework'ü (tek komutla modda otomatik, manuel modda isteğe bağlı)
