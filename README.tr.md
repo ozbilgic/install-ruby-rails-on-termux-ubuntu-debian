@@ -91,13 +91,14 @@ Want to install Rails too? (y/n):
 Başarılı kurulumdan sonra şu komutları kullanabilirsiniz:
 
 ```bash
-ruby -v              # Ruby versiyonunu kontrol et
-gem -v               # Gem versiyonunu kontrol et
-bundle -v            # Bundler versiyonunu kontrol et
-rails -v             # Rails versiyonunu kontrol et (kuruluysa)
+ruby -v                  # Ruby versiyonunu kontrol et
+gem -v                   # Gem versiyonunu kontrol et
+bundle -v                # Bundler versiyonunu kontrol et
+rails -v                 # Rails versiyonunu kontrol et (kuruluysa)
 
-gem install <gem>    # Ruby gem kurulumu
-rails new uygulamam  # Yeni Rails uygulaması oluştur
+gem install <gem>        # Ruby gem kurulumu
+rails new uygulama_adi   # Yeni Rails uygulaması oluştur
+rails server -b 0.0.0.0  # Rails uygulamasını başlat
 ```
 
 ## Sorun Giderme

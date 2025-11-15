@@ -40,6 +40,32 @@ check_sudo() {
 # Check sudo availability before starting
 check_sudo
 
+# Configure APT to skip documentation installation
+info "Configuring APT to skip documentation..."
+APT_CONF_DIR="/etc/apt/apt.conf.d"
+APT_CONF_FILE="$APT_CONF_DIR/99-no-install-recommends"
+
+if [ -d "$APT_CONF_DIR" ]; then
+    # Create APT config to skip docs, man pages, and recommends
+    echo 'APT::Install-Recommends "0";' | $SUDO_CMD tee $APT_CONF_FILE > /dev/null
+    echo 'APT::Install-Suggests "0";' | $SUDO_CMD tee -a $APT_CONF_FILE > /dev/null
+    echo 'APT::Get::Install-Recommends "false";' | $SUDO_CMD tee -a $APT_CONF_FILE > /dev/null
+    echo 'APT::Get::Install-Suggests "false";' | $SUDO_CMD tee -a $APT_CONF_FILE > /dev/null
+
+    # Also create dpkg config to skip docs
+    DPKG_CONF_DIR="/etc/dpkg/dpkg.cfg.d"
+    DPKG_CONF_FILE="$DPKG_CONF_DIR/01_nodoc"
+
+    if [ -d "$DPKG_CONF_DIR" ]; then
+        echo 'path-exclude /usr/share/doc/*' | $SUDO_CMD tee $DPKG_CONF_FILE > /dev/null
+        echo 'path-exclude /usr/share/man/*' | $SUDO_CMD tee -a $DPKG_CONF_FILE > /dev/null
+        echo 'path-exclude /usr/share/groff/*' | $SUDO_CMD tee -a $DPKG_CONF_FILE > /dev/null
+        echo 'path-exclude /usr/share/info/*' | $SUDO_CMD tee -a $DPKG_CONF_FILE > /dev/null
+        echo 'path-exclude /usr/share/lintian/*' | $SUDO_CMD tee -a $DPKG_CONF_FILE > /dev/null
+        echo 'path-exclude /usr/share/linda/*' | $SUDO_CMD tee -a $DPKG_CONF_FILE > /dev/null
+    fi
+fi
+
 # 1. Updating package
 info "Updating package lists..."
 if ! $SUDO_CMD apt update; then
@@ -102,6 +128,7 @@ echo -e "${YELLOW}How to Use:${NC}"
 echo "  ruby -v              # Ruby version"
 echo "  gem install <gem>    # Gem installation"
 echo "  rails new myapp      # New Rails project"
+echo "  rails s -b 0.0.0.0   # Start Rails project"
 echo ""
 echo -e "${GREEN}Happy coding!${NC}"
 echo ""

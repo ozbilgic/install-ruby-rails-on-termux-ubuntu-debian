@@ -91,13 +91,14 @@ Want to install Rails too? (y/n):
 After successful installation, you can use:
 
 ```bash
-ruby -v              # Check Ruby version
-gem -v               # Check Gem version
-bundle -v            # Check Bundler version
-rails -v             # Check Rails version (if installed)
+ruby -v                  # Check Ruby version
+gem -v                   # Check Gem version
+bundle -v                # Check Bundler version
+rails -v                 # Check Rails version (if installed)
 
-gem install <gem>    # Install a Ruby gem
-rails new myapp      # Create new Rails application
+gem install <gem>        # Install a Ruby gem
+rails new myapp          # Create new Rails application
+rails server -b 0.0.0.0  # Start Rails application
 ```
 
 ## Troubleshooting
